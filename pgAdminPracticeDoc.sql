@@ -38,6 +38,60 @@
 --group by staff_id, customer_id
 
 
-SELECT staff_id, COUNT(amount) 
-FROM payment
-GROUP BY staff_id
+--SELECT staff_id, COUNT(amount) 
+--FROM payment
+--GROUP BY staff_id
+
+--SELECT rating, AVG (replacement_cost)
+--FROM film
+--GROUP BY rating
+
+--SELECT customer_id, SUM(amount)
+--FROM payment
+--GROUP BY customer_id
+--ORDER BY SUM(amount) DESC
+--LIMIT 5
+
+--SELECT customer_id, SUM(amount) FROM payment
+--WHERE customer_id NOT IN (184,87,477)
+--GROUP BY customer_id
+--HAVING SUM(amount) > 100
+
+--# of customers per store
+--SELECT store_id, COUNT(customer_id) FROM customer
+--GROUP BY store_id
+--HAVING COUNT(customer_id) > 300
+
+--SELECT customer_id, COUNT(*)
+--FROM payment GROUP BY customer_id
+--HAVING COUNT(*) >= 40;
+
+--select customer_id, sum(amount)
+--from payment
+--where staff_id = 2
+--group by customer_id
+--having sum(amount) > 100
+
+--select count(amount) as num_transactions
+--from payment
+
+--select customer_id, sum(amount) as total_spent
+--from payment
+--where amount > 2
+--group by customer_id
+--having sum(amount) > 100
+
+
+--SELECT *
+--FROM (
+--    SELECT DISTINCT ON (customer.customer_id) 
+--        payment.payment_id, 
+--        payment.customer_id, 
+--        customer.first_name
+--    FROM payment
+--    INNER JOIN customer ON payment.customer_id = customer.customer_id
+--    ORDER BY customer.customer_id, customer.first_name ASC, payment.payment_id
+--) subquery
+--ORDER BY first_name;
+
+
